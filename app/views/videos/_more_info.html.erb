@@ -1,0 +1,12 @@
+<li style="margin-bottom: 5px;"><%=@video.name.split.map(&:capitalize).join(' ') %></li> 
+<li style="margin-bottom: 5px;">Equipment : <%= @video.equipment.split.map(&:capitalize).join(' ') %></li>
+<li style="margin-bottom: 5px;"> Fitness Level : <%=@video.level.split.map(&:capitalize).join(' ') %></li> 
+<li style="margin-bottom: 5px;">Intensity : <%= @video.difficulty %>/5</li>
+<li style="margin-bottom: 5px;">Body Type : <%= @video.bodytype.split.map(&:capitalize).join(' ') %></li>
+<li style="margin-bottom: 5px;">Calories Range : <%= ((@video.calories/100.to_f)*110).round %> - <%= ((@video.calories/100.to_f)*210).round %></li>
+<li>Trainer/Company : <%= @video.trainer.split.map(&:capitalize).join(' ') %></li>
+<li style="margin-top:10px;"><g:hangout render="createhangout"
+        initial_apps="[{ app_id : '852022339277', start_data : <%=@video.tubeid %>, 'app_type': 'ROOM_APP' }]">
+    </g:hangout></li>
+
+<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>

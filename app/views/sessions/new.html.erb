@@ -1,0 +1,25 @@
+<% provide(:title, "Sign in") %>
+<div class="someclass" style="background-image: url(../images/wello.jpg); background-repeat: no-repeat; background-position: center; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; margin-top:-20px; overflow:hidden;">
+  <div class="container">
+    
+    <div class="row center">
+  <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px; border: solid #b9b9b9; border-width: 1px 1px; margin-bottom: 40px; margin-top:40px;">
+   <h1 class="landing2" style="margin-top:5px;">Sign in</h1>
+   <%= form_for(:session, url: sessions_path) do |f| %>
+
+   <%= f.label(:email, "Email", :style => "float: left; font-weight: bold;") %>
+   <%= f.text_field :email %>
+
+   <%= f.label(:password, "Password", :style => "float: left; font-weight: bold;") %>
+   <%= f.password_field :password %>
+
+   <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+   <% end %>
+
+   <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+   <p><%= link_to "Forgot password?", new_password_reset_path %></p>
+ </div>
+</div>
+</div>
+</div>
+

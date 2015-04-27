@@ -1,0 +1,17 @@
+<div class="container-fluid">
+ <div class="row center">
+  <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px; border: solid #b9b9b9; border-width: 1px 1px;">
+    <h1 class="landing2">
+      Calories Burned<br> 
+    </h1>
+    <h2 class="landing">Input the calories you've burned from non-fitcasts workouts</h2>
+
+    <%= form_for(@calorie) do |f| %>
+    <%= render 'shared/error_cals' %>
+    <%= f.label(:title, "Calories Burned", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :calburnt %>
+    <%= f.text_field :created_at, :value=>Time.now.in_time_zone(current_user.timezone).strftime('%Y-%m-%d'), :class => 'datepicker' %>
+    <%= f.submit "Save", class: "btn btn-primary btn-large btn-responsive2" %>
+    <% end %>
+  </div>
+</div>

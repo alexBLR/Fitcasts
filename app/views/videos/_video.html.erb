@@ -1,0 +1,21 @@
+<% if video.equipment == "None" %>
+<div class="box col3 None" style="overflow:hidden; padding:0; height:auto; border-radius:0px; -webkit-border-radius: 0px; -moz-border-radius: 0px;">
+	<a href="<%=video_path video.id %>" style="text-decoration: none;">
+<% else %>
+		<div class="box col3 some" style="overflow:hidden; padding:0; height:auto; border-radius:0px; -webkit-border-radius: 0px; -moz-border-radius: 0px;">
+	<a href="<%=video_path video.id %>" style="text-decoration: none;">
+		<% end %>
+		<div style="height:182px; overflow:hidden; margin-top: -32px;">
+			<p style="position:absolute; right:15px; top:10px; background: rgba(0, 0, 0, 0.4); color:white; padding-left:5px; padding-right:5px;"><%=video.duration %> min</p>  
+			<img src="http://img.youtube.com/vi/<%=video.tubeid %>/0.jpg" height="480" width="640">
+		</div>
+		<ul class="nav nav-pills nav-stacked" style="text-align: left; color: white; padding: 10px; font-size:13px; background: rgba(0,0,0, 0.87); margin-top: 0px; margin-bottom:0px;">  
+			<% if video.name.length > 30 %>
+			<li><%=video.name[0..30].split.map(&:capitalize).join(' ')%>...</li>
+			<% else %>
+			<li><%=video.name.split.map(&:capitalize).join(' ')%></li>
+			<% end %>
+			<li>Calories Range : <%= ((video.calories/100.to_f)*110).round %> - <%= ((video.calories/100.to_f)*210).round %></li>
+		</ul>
+	</a>
+</div>

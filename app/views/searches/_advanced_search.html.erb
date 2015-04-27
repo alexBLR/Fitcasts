@@ -1,0 +1,18 @@
+<div class="container-fluid">
+ <div class="row center">
+  <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px; border: solid #b9b9b9; border-width: 1px 1px;">
+    <h2 class="landing2">
+      Workout Routine Search
+    </h2>
+
+    <%= form_for(@search) do |f| %>
+    <%= f.label(:title, "Training Type", :style => "float: left;") %>
+    <%= f.select(:fitnesstype, ['fat burning','high intensity interval training','core','pilates','yoga','indoor cycling','stretching','strength','kettlebell','barre','dance','boxing'])%>
+    <%= f.label(:title, "Minutes", :style => "float: left; ") %>
+    <%= f.select :duration, [["10 min or less",10],["15 min or less",15],["30 min or less",30],["45 min or less",45],["60 min or less",60]] %>
+
+    <%= f.submit "Search", class: "btn btn-primary btn-large btn-responsive2" %>
+    <% end %>
+  </div>
+</div>
+</div>

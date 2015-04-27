@@ -1,0 +1,30 @@
+<div class="container-fluid">
+ <div class="row center">
+   <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px; border: solid #b9b9b9; border-width: 1px 1px;">
+    <h1 class="landing2" style="margin-bottom: 25px;">
+      Personal Assessment
+    </h1>
+
+    <%= form_for(@log) do |f| %>
+
+    
+
+    <%= f.label(:title, "Gender", :style => "float: left; font-weight: bold;") %>
+    <%= f.select :sex, [["female"],["male"]] %>
+    <%= f.label(:title, "Age (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :age %>
+    <%= f.label(:title, "Height (ft)", :style => "float: left; font-weight: bold;") %>
+    <%= f.select :height, [1,2,3,4,5,6,7,8] %>
+    <%= f.label(:title, "Height (in)", :style => "float: left; font-weight: bold;") %>
+    <%= f.select :height2, [1,2,3,4,5,6,7,8,9,10,11] %>
+    <%= f.label(:title, "Weight (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :weight %>
+    <%= f.label(:title, "Goal Weight (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :goalweight %>
+
+
+    <%= f.submit "Save", class: "btn btn-primary btn-large" %>
+    <% end %>
+  </div>
+</div>
+</div>

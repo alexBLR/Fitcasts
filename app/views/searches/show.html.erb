@@ -1,0 +1,19 @@
+<% provide(:title, 'Search Workout Routines') %>
+<div class="container-fluid" style="padding-left:0px;">
+	<div class="span12 center">
+		<ul class="inline">
+			<li>
+<h1  class="landing2" style="margin-top:5px; font-family: Helvetica;  color: black; "> <%= @search.fitnesstype %> <%= @search.duration %> min or less</h1>
+			</li>
+			<li>
+				<%= link_to 'New Search', search_path, :remote => true, :id => "new_search_link2", :class => "btn btn-primary btn-large" %>
+			</li>
+		</ul>
+	</div>
+
+	<div class="row center" style="max-width: 1170px;">
+		<div id="masonry-container3" class="transitions-enabled infinite-scroll clearfix center">
+			<%= render @search.videos %>
+		</div>
+	</div>
+</div>

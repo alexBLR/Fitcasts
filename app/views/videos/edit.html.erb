@@ -1,0 +1,35 @@
+<% provide(:title, 'Home') %>
+<div class="row-fluid center" style="max-width:640px; background: rgba(0,0,0, 0.99); padding: 0px;">
+  <div class="video-container">
+    <iframe src="http://www.youtube.com/embed/<%=@video.tubeid %>?wmode=opaque&rel=0&autohide=1&showinfo=0&modestbranding=1&cc_load_policy=0&iv_load_policy=3" frameborder="0" width="640" height="360"></iframe>
+  </div>
+</div>
+
+<div class="container-fluid">
+ <div class="row center">
+  <div class="span7-fluid center" style="max-width:640px; background: rgba(255, 255, 255, 0.6); padding: 10px; text-align:left; font-size:22px;">
+    <%= form_for(@video) do |f| %>
+
+    <%= f.label(:title, "Body Type") %>
+    <%= f.text_field :bodytype %>
+
+    <%= f.label(:title, "Intensity") %>
+    <%= f.text_field :difficulty %>
+    <%= f.label(:title, "Equipment") %>
+    <%= f.text_field :equipment %>
+
+    <%= f.label(:title, "Duration") %>
+    <%= f.text_field :duration %>
+
+    <%= f.label(:title, "Calories") %>
+    <%= f.text_field :calories %>
+
+    <%= f.label(:title, "Difficulty") %>
+    <%= f.text_field :level %>
+
+
+    <%= f.submit "Save Changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>

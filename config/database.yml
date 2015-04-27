@@ -1,0 +1,29 @@
+# SQLite version 3.x
+
+
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: project_development
+  pool: 5
+  username: zotovas
+  password: Yulianna2
+  host: localhost
+
+test: 
+  adapter: postgresql
+  encoding: utf8
+  database: project_test
+  pool: 5
+  username: alexzotov
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: project_production
+  pool: 5
+  username: alexzotov
+  password:
+  host: localhost

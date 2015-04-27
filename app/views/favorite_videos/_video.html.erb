@@ -1,0 +1,15 @@
+
+<div class="box col3" style="overflow:hidden; padding:0; height:auto;">
+	<a href="<%=video_path video.id %>" style="text-decoration: none;">
+		<div style="height:182px; overflow:hidden; margin-top: -32px;">
+			<img src="http://img.youtube.com/vi/<%=video.tubeid %>/0.jpg" height="480" width="640">
+		</div>
+		<ul class="nav nav-pills nav-stacked" style="text-align: left; color: white; padding: 10px; font-size:13px; background: rgba(0,0,0, 0.90); margin-top: 0px; margin-bottom:0px;">	
+			<li><%=video.name %></li>
+			<li>Duration: <%=video.duration %> min</li>
+			<li>Equipment: <%=video.equipment %></li>
+			<li>Intensity Level: <%=video.level %></li>
+			<li>Workout Type: <%=video.fitnesstype %></li> 
+		</ul>
+	</a>
+</div>

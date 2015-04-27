@@ -1,0 +1,46 @@
+<% provide(:title, 'Home') %>
+<div class="container-fluid">
+ <div class="row">
+    <h1  class="landing" id="advanced" style="font-weight:bold;">Add New Video</h1>
+ </div>
+ <div class="row center">
+  <div class="span7-fluid center" style="max-width:640px; background: rgba(255, 255, 255, 0.6); padding: 10px; text-align:left; font-size:22px;">
+      <%= form_for(@video) do |f| %>
+
+      <%= f.label(:title, "Video Name") %>
+      <%= f.text_field :name %>
+
+      <%= f.label(:title, "Youtube Id") %>
+      <%= f.text_field :tubeid %>
+
+      <%= f.label(:title, "Duration") %>
+      <%= f.text_field :duration %>
+
+
+     <%= f.label(:title, "Intensity") %>
+      <%= f.text_field :difficulty %>
+
+      <%= f.label(:title, "Equipment") %>
+      <%= f.text_field :equipment %>
+
+      <%= f.label(:title, "Fitness Type") %>
+      <%= f.text_field :fitnesstype %>
+
+      <%= f.label(:title, "Body Type") %>
+      <%= f.text_field :bodytype %>
+
+      <%= f.label(:title, "trainer") %>
+      <%= f.text_field :trainer, :value => current_user.trainer_name %>
+
+      
+       <%= f.label(:title, "difficulty") %>
+      <%= f.text_field :level %>
+
+       <%= f.label(:title, "calories") %>
+    <%= f.text_field :calories %>
+
+      <%= f.submit "Start Your Workout", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

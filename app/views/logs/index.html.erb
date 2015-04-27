@@ -1,0 +1,34 @@
+<% if @logs.blank? %>
+<%= render 'logs/assessment' %>
+<% else %>
+<div class="container-fluid">
+ <div class="row center">
+ 	<div class="span9-fluid center">
+ 		<ul class="inline">
+      <li><%= button_to "Update Weight", new_weight_path,:class => "btn btn-primary btn-large",:method => :get %></li>
+      <li><%= button_to "Update Calories", new_cal_path,
+      :class => "btn btn-primary btn-large", :method => :get %></li>
+    </ul>
+  </div>
+  <div class="span9-fluid center" style="max-width: 900px;">
+
+    <div class="row-fluid" style="text-align:center; background-color:#2e4174; color:white; font-size:16px; font-weight:bold; margin-top:20px;">
+      <a class="span3" title="Current Weight" rel='tooltip' data-placement='bottom' style="text-decoration:none; color: white;">Today <br><%=@currentweight %> lbs</a>
+      <a class="span3" title="Start Weight" rel='tooltip' data-placement='bottom' style="text-decoration:none; color: white;">Starting <br><%=@startweight %> lbs</a>
+      <a class="span3" title="Weight Change in LBS" rel='tooltip' data-placement='bottom' style="text-decoration:none; color: white;">Change <br><%=@change %> lbs</a>
+      <a class="span3" title="Weight Change in %" rel='tooltip' data-placement='bottom' style="text-decoration:none; color: white;">% Change <br><%= @percentchange.round(2) %></a>
+    </div>
+    <%= line_chart [{name: 'Weight',data: @logs.group_by_day(:created_at,time_zone: current_user.timezone).average(:weight)},{name: 'Weight Goal',data:@logs.group_by_day(:created_at, time_zone: current_user.timezone).average(:goalweight)}], library: {title: "Weight Chart", backgroundColor: "#eee", padding: 0}, min: nil, max: @startweight+30%>
+
+    <div class="row-fluid" style="text-align:center; background-color:#70bf44; color:white; font-size:16px; font-weight:bold; margin-top:20px;">
+      <a class="span3" title="Cals Burned Last Workout" rel='tooltip' data-placement='bottom' style="text-decoration:none; color: white;">Last Time<br><%=@currentcal %> cal</a>
+      <a class="span3" title="Average Cals Burned" rel='tooltip' data-placement='bottom' style="text-decoration:none; color: white;">Average <br><%=@averagecal.round %> cal</a>
+      <a class="span3" title="Body Mass Index" rel='tooltip' data-placement='bottom' style="text-decoration:none; color: white;">BMI <br><%=@bmi.round(2) %> %</a>
+      <a class="span3" title="Basal Metabolic Rate" rel='tooltip' data-placement='bottom' style="text-decoration:none; color: white;">BMR <br><%= @bmr.round %> cal</a>
+    </div>
+    <%= line_chart [{name: 'Calories',data: @calorie.group_by_day(:created_at,time_zone: current_user.timezone).sum(:calburnt)}], library: {title: "Calories Burned Chart", backgroundColor: "#eee", padding: 0}%>
+  </div>
+
+</div>
+</div>
+<% end %>

@@ -1,0 +1,24 @@
+
+<% provide(:title, 'Home') %>
+<div class="container-fluid">
+ <div class="row center">
+  <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px;">
+    <h1  class="landing2" style="margin-top:5px;">Welcome to Fitcasts</h1>
+    
+    <h2 class="landing">
+      Access to over 500 elite workout videos. Anytime. Anywhere. Any device.
+    </h2>
+
+    <%= form_for(@search) do |f| %>
+
+    <%= f.label(:title, "How long do you want to exercise?", :style => "float: left; font-weight: bold;") %>
+    <%= f.select :duration, [["10 min or less",10],["15 min or less",15],["30 min or less",30],["45 min or less",45],["60 min or less",60]] %>
+
+    <%= f.label(:title, "What type of workout do you like?", :style => "float: left; font-weight: bold;") %>
+    <%= f.select(:fitnesstype, ['fat burning','strength','core','kettlebell','pilates', 'yoga','dance','boxing','high intensity interval training'])%>
+
+    <%= f.submit "Start Your Workout", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>

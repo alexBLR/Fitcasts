@@ -1,0 +1,18 @@
+<div id="myModal" class="modal fade in" tabindex="-1" role="dialog" data-backdrop="true" data-keyboard="true">
+  <div class="modal-body">
+    <h2 class="landing" style="font-weight:bold;">
+      Sign up to access 700+ elite workouts and fitness programs for free.
+    </h2>
+    <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <%= f.label(:email, "Email", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :email %>
+    <%= f.label(:password, "Password", :style => "float: left; font-weight: bold;") %>
+    <%= f.password_field :password %>
+    <%= f.hidden_field :timezone, :id => 'timezone' %>
+    <%= f.submit "Create my account", class: "btn btn-large btn-primary viral" %>
+    <% end %>
+    <p>Already a member? <%= link_to "Sign in", signin_path %></p>
+
+  </div>
+</div>

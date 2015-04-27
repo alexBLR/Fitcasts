@@ -1,0 +1,29 @@
+<div class="container-fluid" style="padding-left:0px;">
+	<div class="row center">
+		<% if !current_user.videos.blank? %>
+		<h2  class="landing" style="font-weight:bold;">My Favorite Videos</h2>	
+		<div id="masonry-container" class="transitions-enabled infinite-scroll clearfix center">
+			<% current_user.videos.each do |video| %>  
+			<div class="box col3" style="overflow:hidden; padding:0; height:auto; border-radius:0px; -webkit-border-radius: 0px; -moz-border-radius: 0px;">
+				<a href="<%=video_path video.id %>" style="text-decoration: none;">
+					<div style="height:182px; overflow:hidden; margin-top: -32px;">
+						<p style="position:absolute; right:15px; top:10px; background: rgba(0, 0, 0, 0.4); color:white; padding-left:5px; padding-right:5px;"><%=video.duration %> min</p>  
+						<img src="http://img.youtube.com/vi/<%=video.tubeid %>/0.jpg" height="480" width="640">
+					</div>
+					<ul class="nav nav-pills nav-stacked" style="text-align: left; color: white; padding: 10px; font-size:13px; background: rgba(0,0,0, 0.87); margin-top: 0px; margin-bottom:0px;">  
+						<li><%=video.name[0...30]%>...</li>
+						<li>Equipment: <%=video.equipment %></li>
+						<li>Difficulty: <%=video.level %></li> 
+					</ul>
+				</a>
+			</div>
+			<% end %>	
+		</div>
+		<% else %>	
+		<div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px;">
+			<h1  class="landing2" style="margin-top:5px;">No Favorite Videos Yet.</h1>
+			<p>Feeling Lucky? <%= link_to "Discover Videos", advanced_path %></p>
+			<% end %>	
+
+		</div>
+	</div>

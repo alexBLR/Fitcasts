@@ -1,0 +1,19 @@
+<% provide(:title, 'Reset Password') %>
+
+<div class="container-fluid">
+ <div class="row center">
+  <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px; border: solid #b9b9b9; border-width: 1px 1px;">
+    <h1 class="landing2" style="margin-top:5px;">Reset Password</h1>
+    <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <%= f.label(:password, "Password", :style => "float: left; font-weight: bold;") %>
+    <%= f.password_field :password %>
+
+    <%= f.label(:password_confirmation, "Retype password", :style => "float: left; font-weight: bold;") %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Reset Password", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>

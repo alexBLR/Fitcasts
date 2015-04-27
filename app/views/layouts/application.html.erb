@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag "application", media: "all",
+  "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag '../images/favicon.ico' %>
+  <%= render 'layouts/shim' %>
+  <%= include_gon %>
+  <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <!-- Update your html tag to include the itemscope and itemtype attributes. -->
+  <html itemscope itemtype="http://schema.org/Article">
+
+  <!-- Place this data between the <head> tags of your website -->
+  <title>Fitcasts | Workout Plans | Workout Routines | <%= yield(:title) %></title>
+  <meta name="description" content="We create amazing workout plans from the best Youtube workout routines tailored to you." />
+
+  <!-- Google Authorship and Publisher Markup -->
+  <link rel="author" href="https://plus.google.com/[Google+_Profile]/posts"/>
+  <link rel="publisher" href=”https://plus.google.com/[Google+_Page_Profile]"/>
+<meta name="p:domain_verify" content="60cb1d26ff9b2bc1b7e1082fe253a6db"/>
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="We create amazing workout plans from the best Youtube fitness videos tailored to you.">
+  <meta itemprop="description" content="Create your own workout plan, use a featured workout plan, or use any of the workout routunes individually all while tracking the progress of your health.">
+  <meta itemprop="image" content="http://img.youtube.com/vi/<%= yield(:tubeid) %>/0.jpg">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@fit_casts">
+  <meta name="twitter:title" content="We create amazing workout plans from the best Youtube workout routines tailored to you.">
+
+  <meta name="twitter:description" content= "Create your own workout plan, use a featured workout plan, or use any of the workout routunes individually all while tracking the progress of your health."
+  <meta name="twitter:creator" content="@fit_casts">
+  <meta name="twitter:domain" content="http://www.fitcasts.com<%= yield(:videoid) %>">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image:src" content="http://img.youtube.com/vi/<%= yield(:tubeid) %>/0.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="We create amazing workout plans from the best Youtube workout routines tailored to you." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://www.fitcasts.com<%= yield(:videoid) %>" />
+  <meta property="og:image" content="http://img.youtube.com/vi/<%= yield(:tubeid) %>/0.jpg" />
+  <meta property="og:description" content="Create your own workout plan, use a featured workout plan, or use any of the workout routunes individually all while tracking the progress of your health." />
+  <meta property="og:site_name" content="Fitcasts" />
+  <meta property="fb:admins" content="655218036" />
+  <meta property="fb:app_id" content="295294863953861" />
+
+  <meta name="p:domain_verify" content="60cb1d26ff9b2bc1b7e1082fe253a6db"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta charset="utf-8">
+</head>
+<body class="<%= @home_page ? 'homepage' : 'homepage2'%>">
+  <%= render 'layouts/fbcomments' %>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/fb' %>
+  <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+  <%= debug(params) if Rails.env.development? %>
+</body>
+</html>

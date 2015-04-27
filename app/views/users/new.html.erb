@@ -1,0 +1,183 @@
+<% provide(:title, 'Sign up') %>
+<div class="someclass" style="background-image: url(../images/wello.jpg); background-repeat: no-repeat; background-position: center; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; margin-top:-20px; overflow:hidden;">
+<div class="container">
+    
+    <div class="row center">
+      <div class="span7-fluid center" style="max-width:800px; padding: 10px;"> 
+        <h1  class="landing2" style="margin-top:5px;">Welcome to Fitcasts</h1>
+        
+        <h2 class="landing" style="font-weight:bold;">
+          Take workout videos to the next level. For Free.
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    
+    <div class="row center">
+  <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px; border: solid #b9b9b9; border-width: 1px 1px; margin-bottom: 40px;">
+  	<h1 class="landing2" style="margin-top:5px;">Sign up</h1>
+    <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <%= f.label(:email, "Email", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :email %>
+
+    <%= f.label(:password, "Password", :style => "float: left; font-weight: bold;") %>
+    <%= f.password_field :password %>
+    <%= f.hidden_field :timezone, :id => 'timezone' %>
+    <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+     <p>Already a member? <%= link_to "Sign in", signin_path %></p>
+    <% end %>
+  </div>
+</div>
+</div>
+</div>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        
+        
+       <!-- BEGIN SERVICE BOX -->
+       <div class="rnr-service-box-center">
+        <!-- BEGIN SERVICE ICON -->
+        <div class="rnr-service-box-icon">
+         <img src="../images/icons/flat-icons/apple-device-flat.png" height="148" width="148">
+       </div>
+       <!-- END SERVICE ICON -->
+       
+       <!-- BEGIN SERVICE CONTENT -->          
+       <div class="rnr-service-box-content">
+        <h3 class="rnr-service-box-title">Use Any Device</h3>
+        <p>Access Fitcasts on-the-go, at the gym, at home, or on an island. We support all mobile devices (and Google Chromecast!) so you can get your sweat on whenever, wherever. </p>
+      </div>
+      <!-- END SERVICE CONTENT -->
+    </div>
+    <!-- END SERVICE BOX -->
+    
+  </div>
+  
+  <div class="span4">
+    
+    
+   <!-- BEGIN SERVICE BOX -->
+   <div class="rnr-service-box-center">
+    <!-- BEGIN SERVICE ICON -->
+    <div class="rnr-service-box-icon">
+     <img src="../images/icons/flat-icons/6.png" alt="Configuration" height="110" width="110">
+   </div>
+   <!-- END SERVICE ICON -->
+   
+   <!-- BEGIN SERVICE CONTENT -->          
+   <div class="rnr-service-box-content">
+    <h3 class="rnr-service-box-title">Search Easily</h3>
+    <p>Stop stumbling through YouTube and other sites trying to find the right workout videos for you.  Fitcasts’ unique search engine makes it easy for you to quickly find workout videos relevant to your needs and desires. </p>
+  </div>
+  <!-- END SERVICE CONTENT -->
+</div>
+<!-- END SERVICE BOX -->
+
+
+</div>
+
+<div class="span4">
+  
+  
+ <!-- BEGIN SERVICE BOX -->
+ <div class="rnr-service-box-center">
+  <!-- BEGIN SERVICE ICON -->
+  <div class="rnr-service-box-icon">
+   <img src="../images/icons/flat-icons/video.png" alt="Security" height="110" width="110">
+ </div>
+ <!-- END SERVICE ICON -->
+ 
+ <!-- BEGIN SERVICE CONTENT -->          
+ <div class="rnr-service-box-content">
+  <h3 class="rnr-service-box-title"> Find the Right Video</h3>
+  <p> No matter your fitness level, athletic background, or exercise goals, Fitcasts ensures there’s something for everyone with its 700+ workout videos.
+  </p>
+</div>
+<!-- END SERVICE CONTENT -->
+</div>
+<!-- END SERVICE BOX -->
+
+
+</div>
+
+
+</div> <!-- END ROW -->
+</div> <!-- END CONTAINER -->
+<div class="container">
+  <div class="row">
+    <div class="span4">
+      
+      
+     <!-- BEGIN SERVICE BOX -->
+     <div class="rnr-service-box-center">
+      <!-- BEGIN SERVICE ICON -->
+      <div class="rnr-service-box-icon" style="margin-bottom: 30px;">
+       <img src="../images/icons/flat-icons/7.png" height="128" width="128">
+     </div>
+     <!-- END SERVICE ICON -->
+     
+     <!-- BEGIN SERVICE CONTENT -->          
+     <div class="rnr-service-box-content">
+      <h3 class="rnr-service-box-title">Create a Program</h3>
+      <p>Generate a custom workout program tailored to your lifestyle needs and fitness goals or choose to use one of the many preexisting programs. Share your program using Facebook and Twitter and get your friends to use your program.</p>
+    </div>
+    <!-- END SERVICE CONTENT -->
+  </div>
+  <!-- END SERVICE BOX -->
+  
+</div>
+
+<div class="span4">
+  
+  
+ <!-- BEGIN SERVICE BOX -->
+ <div class="rnr-service-box-center">
+  <!-- BEGIN SERVICE ICON -->
+  <div class="rnr-service-box-icon">
+   <img src="../images/icons/flat-icons/tracking.png" alt="Configuration" height="128" width="128">
+ </div>
+ <!-- END SERVICE ICON -->
+ 
+ <!-- BEGIN SERVICE CONTENT -->          
+ <div class="rnr-service-box-content">
+  <h3 class="rnr-service-box-title">Track Your Progress</h3>
+  <p>Our ultimate objective is to help you achieve your fitness goals and make you a healthier person.  We provide you with multiple tools to help you track your weight, calories burned, Body Mass Index, and Basal Metabolic Rate. </p>
+</div>
+<!-- END SERVICE CONTENT -->
+</div>
+<!-- END SERVICE BOX -->
+
+
+</div>
+
+<div class="span4">
+  
+  
+ <!-- BEGIN SERVICE BOX -->
+ <div class="rnr-service-box-center">
+  <!-- BEGIN SERVICE ICON -->
+  <div class="rnr-service-box-icon">
+   <img src="../images/icons/flat-icons/fav.png" alt="Security" height="128" width="128">
+ </div>
+ <!-- END SERVICE ICON -->
+ 
+ <!-- BEGIN SERVICE CONTENT -->          
+ <div class="rnr-service-box-content">
+  <h3 class="rnr-service-box-title"> Save Videos</h3>
+  <p> Enjoy a video and want to save it for later?  No problem.  Simply favorite it in order to save it to your profile for later use. </p>
+</div>
+<!-- END SERVICE CONTENT -->
+</div>
+<!-- END SERVICE BOX -->
+
+
+</div>
+
+
+</div> <!-- END ROW -->
+</div> <!-- END CONTAINER -->
+</section>

@@ -1,0 +1,29 @@
+<% provide(:title, "Edit user") %>
+<div class="container-fluid">
+ <div class="row center">
+  <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px; border: solid #b9b9b9; border-width: 1px 1px;">
+    <h1 class="landing2" style="margin-top:5px;">Update your profile</h1>
+    <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.label(:name, "Name", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :name %>
+
+    <%= f.label(:timezone, "Time zone", :style => "float: left; font-weight: bold;") %>
+    <%= f.time_zone_select :timezone %>
+
+    <%= f.label(:email, "Email", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :email %>
+
+    <%= f.label(:password, "Password", :style => "float: left; font-weight: bold;") %>
+    <%= f.password_field :password %>
+
+    <%= f.label(:password_confirmation, "Confirm Password", :style => "float: left; font-weight: bold;") %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
+</div>

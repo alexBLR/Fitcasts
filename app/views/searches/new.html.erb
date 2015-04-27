@@ -1,0 +1,198 @@
+
+<% provide(:title, 'Home') %>
+<% provide(:tubeid, 'PO5nX2Fgh44') %>
+<div class="someclass" style="background-image: url(../images/wello.jpg); background-repeat: no-repeat; background-position: center; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; margin-top:-20px; overflow:hidden;">
+  <div class="container">
+    
+    <div class="row center">
+      <div class="span7-fluid center" id="someclass2" style="max-width:700px; padding: 20px; background: rgba(0, 0, 0, 0.3); "> 
+        <h1  class="landing2"  style="margin-top:5px; font-family: Helvetica;  color: white; ">Easily find your perfect workout video</h1>
+        
+        <h2 class="smaller" style="margin-top:5px; color: white;">
+          Stop fumbling through YouTube trying to find the right workout video for you. 
+        </h2>
+      <%= form_for(@search) do |f| %>
+    <%= f.label(:title, "Training Type", :style => "float: left; font-size: 16px; color:white; font-weight:bold;") %>
+    <%= f.select(:fitnesstype, ['fat burning','high intensity interval training','core','pilates','yoga','stretching','indoor cycling','strength','kettlebell','barre','dance','boxing'])%>
+    <%= f.label(:title, "Minutes", :style => "float: left; font-size: 16px; color:white; font-weight:bold; ") %>
+    <%= f.select :duration, [["10 min or less",10],["15 min or less",15],["30 min or less",30],["45 min or less",45],["60 min or less",60]] %>
+
+    <%= f.submit "Search", class: "btn btn-primary btn-large btn-responsive2" %>
+    <% end %>
+      </div>
+    </div>
+  </div>
+   
+</div>
+
+
+<section style="margin-top:0px;">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        
+        
+       <!-- BEGIN SERVICE BOX -->
+       <div class="rnr-service-box-center">
+        <!-- BEGIN SERVICE ICON -->
+        <div class="rnr-service-box-icon">
+         <img src="../images/hangoutlogo.png" height="110" width="110">
+       </div>
+       <!-- END SERVICE ICON -->
+       
+       <!-- BEGIN SERVICE CONTENT -->          
+       <div class="rnr-service-box-content">
+        <h3 class="rnr-service-box-title">Host Online Workouts</h3>
+        <p>Fitcasts uses Google Hangout (similar to Skype) to let you interact and workout with up to 9 of your friends while watching the same exercise video. </p>
+      </div>
+      <!-- END SERVICE CONTENT -->
+    </div>
+    <!-- END SERVICE BOX -->
+    
+  </div>
+  
+  <div class="span4">
+    
+    
+   <!-- BEGIN SERVICE BOX -->
+   <div class="rnr-service-box-center">
+    <!-- BEGIN SERVICE ICON -->
+    <div class="rnr-service-box-icon">
+     <img src="../images/icons/flat-icons/6.png" alt="Configuration" height="110" width="110">
+   </div>
+   <!-- END SERVICE ICON -->
+   
+   <!-- BEGIN SERVICE CONTENT -->          
+   <div class="rnr-service-box-content">
+    <h3 class="rnr-service-box-title">Search Easily</h3>
+    <p>Stop stumbling through YouTube and other sites trying to find the right workout routine for you.  Fitcasts’ unique search engine makes it easy for you to quickly find workout videos relevant to your needs and desires. </p>
+  </div>
+  <!-- END SERVICE CONTENT -->
+</div>
+<!-- END SERVICE BOX -->
+
+
+</div>
+
+<div class="span4">
+  
+  
+ <!-- BEGIN SERVICE BOX -->
+ <div class="rnr-service-box-center">
+  <!-- BEGIN SERVICE ICON -->
+  <div class="rnr-service-box-icon">
+   <img src="../images/icons/flat-icons/video.png" alt="Security" height="110" width="110">
+ </div>
+ <!-- END SERVICE ICON -->
+ 
+ <!-- BEGIN SERVICE CONTENT -->          
+ <div class="rnr-service-box-content">
+  <h3 class="rnr-service-box-title"> Find the Right Video</h3>
+  <p> No matter your fitness level, athletic background, or exercise goals, Fitcasts ensures there’s something for everyone with its 700+ workout videos.
+  </p>
+</div>
+<!-- END SERVICE CONTENT -->
+</div>
+<!-- END SERVICE BOX -->
+
+
+</div>
+
+
+</div> <!-- END ROW -->
+</div> <!-- END CONTAINER -->
+<div class="container">
+  <div class="row">
+    <div class="span4">
+      
+      
+     <!-- BEGIN SERVICE BOX -->
+     <div class="rnr-service-box-center">
+      <!-- BEGIN SERVICE ICON -->
+      <div class="rnr-service-box-icon" style="margin-bottom: 30px;">
+       <img src="../images/icons/flat-icons/7.png" height="128" width="128">
+     </div>
+     <!-- END SERVICE ICON -->
+     
+     <!-- BEGIN SERVICE CONTENT -->          
+     <div class="rnr-service-box-content">
+      <h3 class="rnr-service-box-title">Create a Program</h3>
+      <p>Generate a custom workout plan tailored to your lifestyle needs and fitness goals or choose to use one of the many preexisting programs. Share your program using Facebook and Twitter and get your friends to use your program.</p>
+    </div>
+    <!-- END SERVICE CONTENT -->
+  </div>
+  <!-- END SERVICE BOX -->
+  
+</div>
+
+<div class="span4">
+  
+  
+ <!-- BEGIN SERVICE BOX -->
+ <div class="rnr-service-box-center">
+  <!-- BEGIN SERVICE ICON -->
+  <div class="rnr-service-box-icon">
+   <img src="../images/icons/flat-icons/tracking.png" alt="Configuration" height="128" width="128">
+ </div>
+ <!-- END SERVICE ICON -->
+ 
+ <!-- BEGIN SERVICE CONTENT -->          
+ <div class="rnr-service-box-content">
+  <h3 class="rnr-service-box-title">Track Your Progress</h3>
+  <p>Our ultimate objective is to help you achieve your fitness goals and make you a healthier person.  We provide you with multiple tools to help you track your weight, calories burned, Body Mass Index, and Basal Metabolic Rate. </p>
+</div>
+<!-- END SERVICE CONTENT -->
+</div>
+<!-- END SERVICE BOX -->
+
+
+</div>
+
+<div class="span4">
+  
+  
+ <!-- BEGIN SERVICE BOX -->
+ <div class="rnr-service-box-center">
+  <!-- BEGIN SERVICE ICON -->
+  <div class="rnr-service-box-icon">
+   <img src="../images/icons/flat-icons/fav.png" alt="Security" height="128" width="128">
+ </div>
+ <!-- END SERVICE ICON -->
+ 
+ <!-- BEGIN SERVICE CONTENT -->          
+ <div class="rnr-service-box-content">
+  <h3 class="rnr-service-box-title"> Save Videos</h3>
+  <p> Enjoy a video and want to save it for later?  No problem.  Simply favorite it in order to save it to your profile for later use. </p>
+</div>
+<!-- END SERVICE CONTENT -->
+</div>
+<!-- END SERVICE BOX -->
+
+
+</div>
+
+
+</div> <!-- END ROW -->
+</div> <!-- END CONTAINER -->
+</section>
+<!-- BEGIN NEWSLETTER SECTION -->
+<section style="background: #363f48;">
+  <div class="container">
+    <div class="row">
+      <div class="span12-fluid center">
+        <h2  class="landing" style="font-weight:bold; color:white; margin-top: 20px;">Ready to become a fitter you?</h2>
+        <ul class="inline" style="margin-bottom:20px;"> 
+          <li>
+            <%= link_to 'Join Fitcasts', signup_path, :style => "font-size: 20px; font-weight: bold;", :class => "btn btn-primary btn-large"  %>
+          </li> 
+          <li>
+            <%= link_to 'Sign in', signin_path, :style => "font-size: 20px; font-weight: bold;", :class => "btn btn-primary btn-large"  %>
+          </li>  
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END NEWSLETTER SECTION -->
+
+

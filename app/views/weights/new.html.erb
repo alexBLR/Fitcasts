@@ -1,0 +1,20 @@
+<div class="container-fluid">
+ <div class="row center">
+  <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px; border: solid #b9b9b9; border-width: 1px 1px;">
+<h1 class="landing2">
+       Weigh In<br> 
+    </h1>
+    <h2 class="landing">Enter your weight and goal weight so you can monitor your progress</h2>
+
+    <%= form_for(@weight) do |f| %>
+    <%= render 'shared/error_weights' %>
+    <%= f.label(:title, "Weight (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :weight %>
+    <%= f.label(:title, "Goal Weight (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :goalweight %>
+    <%= f.text_field :created_at, :value=>Time.now.in_time_zone(current_user.timezone).strftime('%Y-%m-%d'), :class => 'datepicker' %>
+
+    <%= f.submit "Save", class: "btn btn-primary btn-large btn-responsive2" %>
+    <% end %>
+  </div>
+</div>

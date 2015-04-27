@@ -1,0 +1,3 @@
+module FavoriteVideosHelper
+	
+end

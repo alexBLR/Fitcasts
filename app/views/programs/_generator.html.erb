@@ -1,0 +1,48 @@
+  <div class="container-fluid" id="container">
+  <div class="row center">
+  <div class="span7-fluid center" style="max-width:600px; background: rgba(255, 255, 255, 0.6); padding: 10px; border: solid #b9b9b9; border-width: 1px 1px;">
+    <h1 class="landing2" style="margin-bottom: 25px;">
+     Workout Plan Generator
+    </h1>
+
+    <%= form_for(@program) do |f| %>
+    <%= f.label(:title, "Name your program (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :name %>
+    <%= f.label(:title, "What is your fitness goal?", :style => "float: left; font-weight: bold;") %>
+    <%= f.select(:goal, ['Lose Fat','Build Muscle','Get Toned','Improve Performance','Be Healthier','Look Great Naked','Increase Strength','Improve Flexibility'])%>
+    <%= f.label(:title, "How many weeks do you want to train?", :style => "float: left; font-weight: bold;") %>
+    <%= f.select :weeks, [1,2,3,4] %>
+    <%= f.label(:title, "How much time do you have per day?", :style => "float: left; font-weight: bold;") %>
+    <%= f.select :time, [["10 min or less",10],["15 min or less",15],["30 min or less",30],["45 min or less",45],["60 min or less",60]] %>
+    <%= f.label(:title, "What workouts do you like? (pick at least 3)", :style => "text-align:left; font-weight: bold;") %>
+    <div class="row" style="font-weight:bold;">
+      <ul class="checkbox-grid">
+        <li><%= f.check_box(:pilates) %>
+          <%= f.label(:pilates, "Pilates") %></li>
+          <li><%= f.check_box(:yoga) %>
+            <%= f.label(:yoga, "Yoga") %></li>
+            <li><%= f.check_box(:fat) %>
+              <%= f.label(:fat, "Circuit") %></li>
+              <li><%= f.check_box(:hiit) %>
+                <%= f.label(:hiit, "HIIT") %></li>
+                <li><%= f.check_box(:dance) %>
+                  <%= f.label(:dance, "Dance") %></li>
+                  <li><%= f.check_box(:strength) %>
+                    <%= f.label(:strength, "Strength") %></li>
+                    <li><%= f.check_box(:boxing) %>
+                      <%= f.label(:boxing, "Boxing") %></li>
+                      <li><%= f.check_box(:barre) %>
+                        <%= f.label(:barre, "Barre") %></li>
+                        <li><%= f.check_box(:kettlebell) %>
+                          <%= f.label(:kettlebell, "Kettlebell") %></li>
+                            <li><%= f.check_box(:stretching, :disabled => true) %>
+                              <%= f.label(:stretching, "Stretching") %></li>
+                            </ul>
+                          </div>
+                          <%= f.submit "Generate Program", class: "btn btn-primary btn-large",:style => "margin-top: 10px;" %>
+                          <% end %>
+
+
+                        </div>
+                      </div>
+                    </div>

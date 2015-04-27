@@ -1,0 +1,27 @@
+<% provide(:title, 'My Workout Plan') %>
+<% if @programs.blank? %>
+<%= render 'programs/generator' %>
+<% else %>
+<% if current_user.log.nil? %>
+<%= render 'programs/assessment' %>
+
+<% elsif @latestweight.blank? %>
+<%= render 'programs/weight' %>
+<% end %> 
+<ul class='timeline' style="margin-top: -5px;">
+	<li class="year" style="background-color: #ffffff; font-size: 30px; color: black; max-width: 13em; font-weight: bold; margin-bottom: 10px;">Current Workout Routine</li> 
+	<%= render 'programs/today' %>
+	<li class="year">Week <%= @week %></li>
+	<%= render 'programs/program' %>
+	<li class="event"><a href="<%=program_path @findweeks.id%>" style="text-decoration: none;">
+		<div style="height:182px; overflow-y: hidden;
+		overflow-x: visible; margin-top: -40px; background-color: #000000;">
+		<p style="position:absolute; left:30px; top:30px; background-color: #000000; color:white; padding:5px; font-weight:bold; font-size: 27px;">View Full Program</p> 
+		<p style="position:absolute; left:0px; bottom:0px; background-color: #009ddd; color:white; padding:5px; font-weight:bold; font-size: 18px; margin:0px;">All Days </p> 
+	</div>
+</a></li>
+</ul>
+<div class="row center">
+<a href="<%= new_program_path %>" style="font-size: 30px;">Change Your Program</a>
+</div>
+<% end %>

@@ -1,0 +1,34 @@
+ <% @videos.each_with_index do |video, i| %> 
+ <li class="event" id="videos">
+  <a href="<%=video_path video.id %>" style="text-decoration: none;">
+    <div style="height:182px; overflow-y: hidden;
+    overflow-x: visible; margin-top: -40px;">
+    
+    <p style="position:absolute; left:0px; bottom:0px; background-color: #009ddd; color:white; padding:5px; font-weight:bold; font-size: 18px; margin:0px;">Day <%= i+1 %></p>
+    <p style="position:absolute; right:15px; top:10px; background: rgba(0, 0, 0, 0.4); color:white; padding-left:5px; padding-right:5px;"><%=video.duration %> min</p>
+    <% if @programday>1%>  
+    <% if @var>=i %>
+    <% if @complete[i].complete != true  %>
+    <p class="addcals" style="position:absolute; left:0px; top:0px; background: rgba(0, 0, 0, 0.6); color:white; font-weight: bold; font-size: 24px; padding-top: 10px; width: 100%; height: 100%;">
+     <%= link_to 'Yes', :controller => "programs", :action => "addcals", :calburnt => ((video.calories/100.to_f)*@lastweight.weight).round, :created_at => @complete[0].created_at + (i+1).day, :workout_id => @complete[i].id, :user_id => current_user.id, :remote => true, :id => "add_cals_link" %> | 
+     <%= link_to 'No', :controller => "programs", :action => "nocals", :workout_id => @complete[i].id, :remote => true, :id => "no_cals_link"%><br>
+     Did you finish this workout?
+   </p> 
+   <% else %>
+   <p class="complete" style="position:absolute; left:0px; top:0px; background: rgba(0, 0, 0, 0.6); color:white; font-weight: bold; font-size: 24px; padding-top: 60px; width: 100%; height: 100%;">Workout Completed</p> 
+   <% end %> 
+   <% end %> 
+   <% end %>
+   <img src="http://img.youtube.com/vi/<%=video.tubeid %>/0.jpg" height="480" width="640">
+ </div>
+ <ul class="nav nav-pills nav-stacked" style="text-align: left; color: white; padding: 10px; font-size:13px; background: rgba(0,0,0, 0.87); margin-top: 0px; margin-bottom:0px; padding-left:70px; font-weight: bold;">  
+  <% if video.name.length > 25 %>
+  <li><%=video.name[0..25]%>...</li>
+  <% else %>
+  <li><%=video.name%></li>
+  <% end %>
+</ul>
+</a>
+</li>
+<% end %>
+

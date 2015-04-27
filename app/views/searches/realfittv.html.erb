@@ -1,0 +1,46 @@
+<section>
+<div class="container" style="background-color: #3E6372; width: 100%;">
+<div class="row center">
+<h1 style="font-weight:bold; color:white; padding-top: 30px;"> Workout together with your friends using RealFitTv videos</h1>
+</div>
+<div class="row center" style="margin-top:40px; padding-bottom: 30px; max-width: 1302px;">
+<div class="span6"><img src="../images/realfithangout.png" height="480" width="480"></div>
+<div class="span6" style="text-align:left;">
+<p style="font-size:20px; color:white;">Fitcasts uses Google Hangout (similar to Skype) to let you interact and workout with up to 9 of your friends while watching the same exercise video.  Follow these simple steps to start your Fitcasts Hangout:</p>
+<p style="font-size: 19px; margin-left: 20px; color:white;">
+1) Find a workout video on Fitcasts<br>
+2) Click <span><img src="../images/start.png"></span> on the video page<br>
+3) Invite your friends to join your hangout<br>
+4) Start working out together!
+</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="container" style="background-color: #B2D4DC; width: 100%; padding-bottom: 0px;">	
+<div class="row center" style="padding-top: 30px; padding-bottom: 30px; max-width: 938px;">
+<div class="span5" style="text-align:left; padding-top:5px;">
+	<div class="span1" style="margin-left:10px; padding-top:5px;"><img src="../images/realfit.jpg" height="70" width="70"></div>
+	<div class="span3"><p id="speech" style="font-size:12px;">"We are excited to provide our clients with the Fitcasts Hangout feature. You can now workout with your friends using our videos in the comfort of your own home."<br> <span style="font-style:italic;">--RealFitTv Team</span></p></div>
+	</div>
+
+<div class="span4" style="padding-top:15px;">
+<%= form_tag("/trainer-search", method: "post", style: "float:right;") do %>
+<div class="controls form-inline" style="text-align:right;">
+<select class="input-medium" name="type">
+  <% @categories.each do |category| %>  
+  <option><%= category.fitnesstype %></option>
+  <% end %>
+</select>
+<input name="commit" type="submit" class="btn btn-primary btn-default" value="Find a RealFitTV video" />
+</div>
+<% end %>
+</div>
+
+</div>
+</div>
+</section>
+
+
+

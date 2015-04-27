@@ -1,0 +1,23 @@
+<div id="myModal" class="modal fade in" tabindex="-1" role="dialog" data-backdrop="true" data-keyboard="true">
+
+  <div class="modal-body">
+    <h2 class="landing" style="font-weight:bold; margin-bottom:10px;">
+      Weigh In
+      
+    </h2>
+    <h3 class="landing" style="text-align: center;">
+Enter your weight and goal weight so you can monitor your progress
+    </h3>
+    <%= form_for(@weight) do |f| %>
+    <%= f.label(:weight, "Current Weight (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :weight %>
+    <%= f.label(:weight, "Goal Weight (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :goalweight %>
+    <%= f.text_field :created_at, :value=>Time.now.in_time_zone(current_user.timezone).strftime('%Y-%m-%d'), :class => 'datepicker' %>
+
+    <%= f.submit "Start Workout", class: "btn btn-small btn-primary" %>
+    <button type="button" class="btn btn-small btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+    <% end %>
+
+</div>

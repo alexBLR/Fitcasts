@@ -1,0 +1,28 @@
+<div id="myModal" class="modal fade in" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-body" style="max-height: 465px; padding-bottom: 70px; overflow-y: hidden;">
+    <h2 class="landing">
+      Personal Assessment
+    </h2>
+
+    <%= form_for(@log) do |f| %>
+
+    
+
+    <%= f.label(:title, "Gender", :style => "float: left; font-weight: bold;") %>
+    <%= f.select :sex, [["female"],["male"]] %>
+    <%= f.label(:title, "Age (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :age %>
+    <%= f.label(:title, "Height (ft)", :style => "float: left; font-weight: bold;") %>
+    <%= f.select :height, [1,2,3,4,5,6,7,8] %>
+    <%= f.label(:title, "Height (in)", :style => "float: left; font-weight: bold;") %>
+    <%= f.select :height2, [1,2,3,4,5,6,7,8,9,10,11] %>
+    <%= f.label(:title, "Weight (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :weight %>
+    <%= f.label(:title, "Goal Weight (required)", :style => "float: left; font-weight: bold;") %>
+    <%= f.text_field :goalweight %>
+
+
+    <%= f.submit "Save", class: "btn btn-primary btn-large btn-responsive2" %>
+    <% end %>
+  </div>
+</div>
